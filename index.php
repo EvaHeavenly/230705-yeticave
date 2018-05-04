@@ -153,12 +153,11 @@ $categories_list = [
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php while ($index <= $counts): ?>
+            <?php foreach ($categories as $value): ?>
             <li class="nav__item">
-                <a href="all-lots.html<?=$index;?>"><?=$categories[$index];?></a>
+                <a href="all-lots.html"><?=$value;?></a>
             </li>
-            <?php $index = $index + 1; ?>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
