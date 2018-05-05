@@ -1,10 +1,10 @@
 <?php
+
 $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
-?>
-<?php
+
 $categories = [
     'Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'    
 ];
@@ -50,6 +50,16 @@ $categories_list = [
     'URL' => 'img/lot-6.jpg'
      ]
 ];
+
+function format_money($number) {
+    $num = ceil($number);
+    if ($num > 1000) {
+        $num = number_format($num, 0, '.', ' ');
+    }
+    $num .= ' ₽';
+    return $num;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -137,7 +147,7 @@ $categories_list = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$value['price'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=format_money($value["price"]);?></span>
                         </div>
                         <div class="lot__timer timer">
 
@@ -155,7 +165,7 @@ $categories_list = [
         <ul class="nav__list container">
             <?php foreach ($categories as $value): ?>
             <li class="nav__item">
-                <a href="all-lots.html"><?=$value;?></a>
+                <a href="all-lots.html"><?=$value;?></a> 
             </li>
             <?php endforeach; ?>
         </ul>
