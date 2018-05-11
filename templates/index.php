@@ -41,7 +41,7 @@
                             <span class="lot__cost"><?=format_money($value['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
-
+                            <?=remaining_time(strtotime('tomorrow'));?>
                         </div>
                     </div>
                 </div>
