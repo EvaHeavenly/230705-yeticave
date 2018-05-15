@@ -1,6 +1,7 @@
 <?php
 
 function format_money($number) {
+    
     $num = ceil($number);
 
     if ($num > 1000) {
@@ -11,8 +12,8 @@ function format_money($number) {
     return $num;
 }
 
-function include_template($file, $data)
-{
+function include_template($file, $data) {
+    
     if (!file_exists($file)) {
         return '';
     }
@@ -33,9 +34,9 @@ function remaining_time($endtime) {
 
     date_default_timezone_set('Europe/Moscow');
 
-    $time_left = $endtime - time();
-    $hours = floor($time_left / 3600);
-    $minutes = floor(($time_left - $hours * 3600) / 60);
+    $time_back = $endtime - time();
+    $hours = floor($time_back / 3600);
+    $minutes = floor(($time_back - $hours * 3600) / 60);
 
     if ($hours < 10) {
         $hours = '0' . $hours;
