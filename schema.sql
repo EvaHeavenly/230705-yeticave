@@ -11,14 +11,6 @@ name VARCHAR(64)
 
 CREATE UNIQUE INDEX name ON categories(name);
 
-INSERT INTO categories 
-SET name = 'Доски и лыжи',
-SET name = 'Крепления',
-SET name = 'Ботинки',
-SET name = 'Одежда',
-SET name = 'Инструменты',
-SET name = 'Разное';
-
 CREATE TABLE lots (
  id INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(64),
@@ -52,3 +44,4 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 );
 
 CREATE UNIQUE INDEX email ON users(email); 
+yeticave
