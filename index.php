@@ -19,6 +19,3 @@ $data['main'] = include_template('templates/index.php', $data);
 $layout = include_template('templates/layout.php', $data);
 
 echo $layout;
-
-
-
