@@ -48,3 +48,15 @@ function remaining_time($endtime) {
     return "$hours:$minutes";   
 }
 
+function get_all_categories($con) {
+    $query = mysqli_query($con, "SELECT id, name FROM categories");
+    return mysqli_fetch_all($query, MYSQLI_ASSOC);
+}
+function get_all_lots($con) {
+    $query = mysqli_query($con, "SELECT id, name, image FROM lots");
+    return mysqli_fetch_all($query, MYSQLI_ASSOC);
+}
+function get_all_lots_with_categories($con) {
+    $query = mysqli_query($con, "SELECT l.id, l.name, l.image, l.start_price, c.name category_name FROM lots l INNER JOIN categories c ON l.category_id = c.id");
+    return mysqli_fetch_all($query, MYSQLI_ASSOC);
+}

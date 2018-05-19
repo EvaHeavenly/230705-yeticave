@@ -19,7 +19,7 @@ INSERT INTO lots (
     ('Крепления Union Contact Pro 2015 года размер L/XL', 'Описание', 2, 'img/lot-3.jpg', 8000, 100, '2018-06-01 00:00:00', NOW()),
     ('Куртка для сноуборда DC Mutiny Charocal', 'Описание', 4, 'img/lot-5.jpg', 7500, 100, '2018-05-25 00:00:00', NOW()),
     ('Ботинки для сноуборда DC Mutiny Charocal', 'Описание', 3, 'img/lot-6.jpg', 5400, 100, '2018-05-27 00:00:00', NOW());
-
+    
 INSERT INTO bets (lot_id, bet_amount, author_id, created_at) VALUES
     (1, 11099, 1, '2018-05-12 12:53:00'),
     (1, 11199, 2, '2018-05-12 12:58:00'),
