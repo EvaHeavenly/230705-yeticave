@@ -9,18 +9,20 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64)
 );
 
-CREATE UNIQUE INDEX name ON categories(name);
+CREATE UNIQUE INDEX c_name ON categories(name);
 
 CREATE TABLE lots (
  id INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(64),
  description VARCHAR(128),
- category_id INT, 
+ category_id INT(11), 
  image VARCHAR(128), 
  start_price INT, 
  finish_date DATETIME, 
  bet_step INT, 
- created_at DATETIME
+ created_at DATETIME,
+ creator_id INT(11),
+ winner_id INT(11)
 );
 
 CREATE INDEX l_name ON lots(name);
@@ -29,8 +31,8 @@ CREATE TABLE bets (
   id INT AUTO_INCREMENT PRIMARY KEY,
   created_at DATETIME,
   bet_amount INT,
-  author_id INT,
-  lot_id INT
+  author_id INT(11),
+  lot_id INT(11)
 );
 
 CREATE TABLE users (
@@ -43,5 +45,4 @@ id INT AUTO_INCREMENT PRIMARY KEY,
  contact VARCHAR(128)
 );
 
-CREATE UNIQUE INDEX email ON users(email); 
-yeticave
+CREATE UNIQUE INDEX email ON users(email);
